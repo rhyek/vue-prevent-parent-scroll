@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'main.js',
+    libraryTarget: 'umd'
   },
   module: {
     loaders: [
