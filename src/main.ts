@@ -5,7 +5,7 @@ export function install(Vue) {
     bind(el: HTMLElement) {
       const handler = (event: WheelEvent) => {
         if (el.scrollTop === 0  && event.deltaY < 0 ||
-            el.scrollTop === el.scrollHeight - el.clientHeight &&
+            Math.abs(el.scrollTop - (el.scrollHeight - el.clientHeight)) <= 1 &&
             event.deltaY > 0)
         {
           event.preventDefault()
